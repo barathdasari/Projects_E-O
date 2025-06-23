@@ -1,0 +1,48 @@
+Mid-Year Progress Update: RTM & BAU Optimization Experimentation Analysis
+
+
+
+1. Strategy & Communication
+	•	Contributed to the evolution and broad communication of Verizon’s experimentation strategy by delivering impactful insights across multiple A/B test initiatives, including B360 Gridwall (PzAI vs PEGA) and VZ Engage model performance tests.
+	•	Supported the shift from a project-focused to a product-oriented operating model by introducing hypothesis-driven experimentation, enabling iterative feature delivery through Digital Chat Summaries with measurable uplift on conversion KPIs.
+
+⸻
+
+2. Engagement & Services
+	•	Acted as the hub in 7+ analytical and experimentation projects, guiding stakeholders and recommending tailored solutions to align with Verizon’s business goals.
+	•	Facilitated cross-functional collaboration across marketing, sales analytics, and digital product teams, ensuring alignment on test designs, metrics, and success criteria.
+
+⸻
+
+3. People & Processes
+	•	Delivered analytics as a service by productizing statistical test designs and workflows for recurring use cases like recommendation system uplift tests and digital engagement metrics.
+	•	Fostered a collaborative knowledge environment through initiatives like Python Office Hours, teaching experimentation fundamentals and automation techniques to upskill analysts and engineers.
+	•	Supported and adopted new intake and workflow management processes within Digital Summary initiatives, optimizing timelines, data flow, and experimental governance.
+
+⸻
+
+4. Expansion & Capability Building
+	•	Expanded experimentation-as-a-service model to include GCP-based learning enablement, building a 5-week structured, hands-on training curriculum for offshore teams.
+	•	Established a comprehensive experimentation playbook, covering A/B testing, metric design, sampling, and analysis for various use cases including VZ Engage and B360.
+	•	Created and maintained modular, reusable Python notebooks and Jupyter-based templates for hypothesis testing, reproducibility, and seamless documentation.
+
+⸻
+
+5. Experimentation & Reporting
+	•	Led the dashboard and reporting for B360 Gridwall A/B test (PzAI vs PEGA) and VZ Engage model testing, improving transparency and executive visibility into performance metrics like conversion rate, engagement, and CTR.
+	•	Delivered timely and accurate test readouts using SOAR decks for leadership, embedding actionable recommendations and highlighting statistical significance.
+	•	Standardized experimentation reporting for consistency by integrating GCP BigQuery pipelines and Adobe Analytics data exports.
+	•	Measured and validated telemetry and KPI integrity for Digital Summary onboarding cohorts, ensuring data quality and agent-level segmentation fidelity.
+
+⸻
+
+Next Steps
+	•	Continue expanding experimentation capabilities by refining Bayesian decision boundaries, matched control creation, and variant measurement models.
+	•	Further standardize processes across Gridwall, Chat Summary, and Model Testing initiatives with modular playbooks and reusable experiment pipelines.
+	•	Seek opportunities to integrate with cross-team initiatives involving AI-driven personalization, real-time scoring, and customer intent prediction.
+
+⸻
+
+Support Needed
+	•	Timely communication of financial targets for RTM, AI and Digital Engagement programs to inform test prioritization.
+	•	Continued leadership support to scale the experimentation playbook, align resource bandwidth, and sustain momentum on analytics enablement.
