@@ -46,3 +46,262 @@ Next Steps
 Support Needed
 	•	Timely communication of financial targets for RTM, AI and Digital Engagement programs to inform test prioritization.
 	•	Continued leadership support to scale the experimentation playbook, align resource bandwidth, and sustain momentum on analytics enablement.
+
+
+Mid-Year Progress Update: Fuel Our Culture
+
+
+⸻
+
+1. Presentations
+	•	Delivered key presentations at AD and Director levels showcasing insights from the B360 Gridwall and VZ Engage experiments, focusing on test outcomes, KPIs, and business implications.
+	•	Supported team members in preparing and delivering analytics-driven content for Python Office Hours and the GCP Learning Series.
+
+⸻
+
+2. Engagement Activities
+	•	Organized and led Python Office Hours and a 5-week GCP Learning Program, fostering a culture of continuous upskilling across the offshore analytics team.
+	•	Participated in tech forums, sharing insights on experimentation frameworks and statistical validation methods relevant to Verizon’s digital initiatives.
+
+⸻
+
+3. Volunteering
+	•	Actively participated in Verizon volunteering initiatives, contributing to [Insert hours] and encouraging peer involvement through internal communication channels.
+
+⸻
+
+4. Collaboration
+	•	Partnered with AI&D, GTS, and Business Analytics teams to align experimentation strategies across Digital Summaries, VZ Engage, and Gridwall use cases.
+	•	Shared reusable experimentation templates and statistical frameworks to streamline cross-team onboarding and enable faster adoption.
+
+⸻
+
+5. Effective Communication
+	•	Maintained consistent communication across tools like Slack, Jira, and executive decks to update stakeholders on project milestones and experimentation results.
+	•	Presented insights using VZ templates across onshore and offshore syncs, ensuring alignment with business and technical teams.
+
+⸻
+
+6. Training
+	•	Completed all Verizon-mandated training.
+	•	Designed and led the GCP Analytics Bootcamp, equipping 30+ team members with practical skills using real-world datasets and BigQuery pipelines.
+
+⸻
+
+7. Coaching/Mentoring
+	•	Mentored new team members in experimentation design, data handling, and platform usage (e.g., Adobe Analytics, GCP).
+	•	Created technical documentation and walkthroughs, enabling self-paced onboarding and knowledge reuse.
+
+⸻
+
+Next Steps
+	•	Continue fostering cross-team engagement through learning sessions, mentoring, and best-practice sharing in experimentation and analytics.
+
+⸻
+
+Support Needed
+	•	Leadership support to scale internal upskilling programs and enhance access to collaboration and training resources.
+
+
+
+
+Mid-Year Progress Update: Business Enablement – Insights to Action
+
+
+⸻
+
+1. Revenue & Cost of Acquisition Initiatives
+
+Progress:
+	•	Collaborated with BU teams to launch multiple experimentation tracks (e.g., B360 Gridwall, VZ Engage) with measurable uplift on conversion metrics, contributing to significant incremental revenue impact.
+	•	Supported Digital and Omni-channel initiatives by executing experimentation pilots focused on AI-based personalization (Digital Summaries) and model uplift analysis.
+	•	Initiated exploratory analysis for AI&D personalization pilots, yielding early positive results in engagement, leading to ongoing pipeline expansion.
+
+Challenges:
+	•	Encountered delays in experiment deployment due to data integration dependencies; mitigation steps (e.g., pre-validation scripts, Adobe data exports) now in place.
+
+Next Steps:
+	•	Prioritize rollout of high-impact experiments (Digital Chat Summary, VZ Engage 2.0) in Q3/Q4.
+	•	Collaborate more closely with BU leads to target revenue-driving initiatives and refine KPI alignment.
+
+⸻
+
+2. Transparency & Communication
+
+Progress:
+	•	Developed and evangelized the experimentation framework (including hypothesis design, metric validation, test-readout templates) to stakeholders across BU.
+	•	Published monthly Experimentation & Optimization digests, summarizing business value, test outcomes, and actionable insights from key experiments (e.g., Gridwall).
+
+Challenges:
+	•	Engagement with digests has varied across functions; current format may not suit all stakeholder groups.
+
+Next Steps:
+	•	Refine digest structure using stakeholder feedback and usage analytics.
+	•	Introduce richer insights and interactive formats (e.g., live dashboards, video summaries) to improve engagement.
+
+⸻
+
+3. Efficiency & Standardization
+
+Progress:
+	•	Collaborated with Finance and BU leads to define a unified framework for quantifying experimentation value.
+	•	Conducted cross-functional workshops and learning sessions (e.g., GCP Bootcamp, Python Office Hours) to share reusable frameworks, improve experimentation consistency.
+
+Challenges:
+	•	Inconsistent KPI definitions and experimentation maturity levels across BUs created standardization challenges.
+
+Next Steps:
+	•	Finalize and operationalize the standardized experimentation methodology, using templates and playbooks.
+	•	Continue cross-BU enablement efforts to improve adoption and align measurement approaches.
+
+⸻
+
+Support Needed
+	•	Leadership backing to scale cross-BU collaboration, especially for high-impact experimentation (Gridwall, Digital Summaries).
+	•	Additional resourcing for data integration automation and tooling support to accelerate experimentation timelines.
+
+
+
+Mid-Year Progress Update: Enhance the Business Skills
+
+
+⸻
+
+1. Business Acumen & Value Delivery
+
+Progress:
+	•	Evaluated experimentation impact through detailed uplift analysis and KPI tracking for initiatives such as Digital Summaries and B360 Gridwall, linking test outcomes directly to revenue and engagement metrics.
+	•	Developed simplified impact narratives that were incorporated into stakeholder presentations and digests to aid business decision-making.
+
+Next Steps:
+	•	Build a cross-functional impact tracking mechanism that maps outcomes of A/B tests to quarterly business performance goals.
+
+⸻
+
+2. Product Understanding
+
+Progress:
+	•	Worked closely with Product Owners across Digital Chat Summaries and VZ Engage, helping clarify model objectives, user touchpoints, and measurable success outcomes.
+	•	Created a metrics taxonomy that bridged experimentation KPIs with product intent for clear prioritization.
+
+Next Steps:
+	•	Partner with product teams to embed experimentation into early product ideation and ensure testability of future features.
+
+⸻
+
+3. VZ Landscape & Technical Awareness
+
+Progress:
+	•	Acquired deep familiarity with Adobe Analytics, GCP BigQuery, and AI/ML pipelines used in Verizon experimentation projects.
+	•	Participated in system walkthroughs and backend data lineage discussions to map metrics flow for key experiments like Gridwall model deployment.
+
+Next Steps:
+	•	Develop a self-serve onboarding resource for new team members on Verizon’s experimentation ecosystem and tooling setup.
+
+⸻
+
+4. Shared Resource Model & Delivery Standards
+
+Progress:
+	•	Provided cross-project support by building reusable experiment templates, standardizing test readout decks, and mentoring teams during GCP and Python Office Hours.
+	•	Flexibly contributed to high-priority business units based on immediate experimentation needs, balancing delivery and enablement.
+
+Next Steps:
+	•	Identify systemic gaps in delivery processes across teams and propose workflow enhancements using modular analytics assets.
+
+⸻
+
+Support Needed
+	•	Greater access to architecture-level documentation to improve technical-decision context during test planning.
+	•	Inclusion in early-stage planning of experimentation use cases to align resources and maximize value delivery.
+
+
+
+
+Mid-Year Progress Update: Transform the Way We Work
+
+
+⸻
+
+1. Operational Efficiency
+
+Progress:
+	•	Delivered high-quality outputs across time-sensitive experiments (e.g., B360 A/B Test) with over 90% on-time analysis completion, avoiding escalations through pre-launch validations and automated QA scripts.
+	•	Designed and rolled out a POC matrix and documentation workflow for tracking experiment ownership and reducing dependency bottlenecks across analytics pods.
+
+⸻
+
+2. Knowledge Sharing
+
+Progress:
+	•	Conducted multiple Python Office Hours and cross-functional GCP training sessions, empowering 30+ offshore team members with hands-on exposure to analytics tooling and statistical experimentation.
+	•	Shared reusable resources like Jupyter notebooks, SOAR decks, and experiment playbooks, establishing a culture of peer learning and scalable enablement.
+
+⸻
+
+3. Building SME Knowledge
+
+Progress:
+	•	Developed SME-level capability in experimentation design, Bayesian methods, and Adobe Analytics measurement, enabling independent execution of complex A/B testing scenarios.
+	•	Led internal discussions on test result interpretation frameworks, non-parametric alternatives, and dynamic decision-making, contributing to innovation and critical thinking within the team.
+
+⸻
+
+Next Steps
+	•	Implement monitoring metrics for test result turnaround time (TAT) and analytical coverage per quarter.
+	•	Expand SME efforts into advanced domains such as dynamic testing boundaries and intent-based control group construction.
+	•	Explore authorship or IP contribution opportunities in experimentation frameworks and analytics automation.
+
+⸻
+
+Support Needed
+	•	Continued access to technical training platforms and documentation systems.
+	•	Leadership support for scaling SME initiatives across pods and promoting innovation-led development tracks.
+
+
+
+Mid-Year Progress Update: Developmental Goals
+
+
+⸻
+
+1. Business & Analytical Skills Development
+
+Standardized KPI Framework
+	•	Defined and applied a structured KPI taxonomy for experimentation programs across initiatives like B360 Gridwall and VZ Engage, focusing on conversion, engagement, and transaction metrics.
+	•	Piloted the framework in two experiments and began documenting learnings for Q3 refinement.
+
+Data Storytelling
+	•	Integrated Adobe Analytics and Looker visualizations into stakeholder readouts, enhancing narrative clarity and decision impact.
+	•	Used insight layering techniques to communicate experiment success and test prioritization to leadership teams.
+
+Multi-Touch Attribution & Customer Journeys
+	•	Enrolled in advanced coursework on attribution modeling and customer journey analytics, bridging gaps between experimentation metrics and user lifecycle understanding.
+	•	Began applying learnings to interpret Digital Summary performance across interaction stages.
+
+⸻
+
+2. Collaboration
+
+Mentoring
+	•	Conducted structured sessions on Python and applied statistics, as part of the Python Office Hours initiative.
+	•	Incorporated real-world experimentation datasets from Verizon to illustrate statistical concepts like hypothesis testing, t-tests, and p-value interpretation.
+
+⸻
+
+3. Volunteering
+
+Community Engagement
+	•	Participated in community mentoring and analytics knowledge-sharing initiatives; [insert actual hours], aiming to exceed Verizon’s 8-hour annual engagement goal.
+
+⸻
+
+Next Steps
+	•	Roll out refined KPI framework for broader adoption across experimentation use cases.
+	•	Complete remaining coursework and translate advanced attribution concepts into usable analytics frameworks.
+	•	Continue mentoring efforts and expand reach through structured curriculum and hands-on projects.
+
+⸻
+
+Support Needed
+	•	Continued access to advanced analytics training content and leadership support for scaling internal mentoring initiatives.
