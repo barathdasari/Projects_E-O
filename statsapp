@@ -1,0 +1,45 @@
+The Complete Story: A Holistic Pilot Design Suite
+The application is designed to be a comprehensive pilot design suite that guides a user through every critical stage of experiment planning and setup. It begins with a deep exploration of the existing data, uses those insights to determine the necessary scale of the experiment, and culminates in the creation of statistically pure, experiment-ready groups.
+This end-to-end process ensures that every pilot is built on a solid statistical foundation, from initial analysis to final group allocation.
+The Final Logic for Your Streamlit Application
+The application’s workflow is now correctly structured into four logical phases, ensuring that insights from one phase directly inform the actions of the next.
+Phase 1: Data Upload and Baseline Analysis
+This is the foundational discovery phase. Before any planning can occur, the user must understand the data they are working with.
+	1.	Data Upload: The user uploads their complete historical dataset of potential participants.
+	2.	Exploratory Baseline Analysis: The app performs and displays a comprehensive analysis of the uploaded
+	•	Descriptive Statistics: Key metrics (mean, median, std. dev, quartiles) for all numerical columns.
+	•	Data Visualizations: Interactive histograms, box plots, and bar charts to show the distribution of key variables and identify potential outliers or data quality issues.
+	•	KPI Deep Dive: The user selects their primary KPI. The app then provides a focused analysis on this KPI, calculating and prominently displaying its baseline rate (mean) and variance (or standard deviation). These two values are critical for the next phase.
+	3.	Identify Stratification Variables: Based on the insights from the analysis, the user identifies other key variables (e.g., demographics, user segments) that influence the KPI and should be controlled for during group creation.
+Phase 2: Power Analysis and Experiment Design
+With a clear understanding of the baseline data, the user now plans the experiment’s statistical requirements.
+	4.	User Inputs for Power Analysis: The user provides the core experimental parameters:
+	•	Minimum Detectable Effect (MDE)
+	•	Alpha (α) (Significance Level)
+	•	Statistical Power (1-β)
+	5.	Sample Size & Duration Calculation: Using the baseline KPI metrics calculated in Phase 1 and the user’s inputs, the app calculates:
+	•	The minimum required sample size per group.
+	•	The estimated experiment duration based on user-provided average daily traffic.
+Phase 3: Create a Representative Study Cohort
+This phase ensures the pilot’s findings will be generalizable.
+	6.	Define Population Proportions: The user specifies the statistical makeup of the target population they want to replicate.
+	7.	Proportional Stratified Sampling: The app uses the required sample size from Phase 2 to draw a perfectly sized cohort from the main dataset that statistically mirrors the defined population proportions.
+Phase 4: Generate and Verify Final Groups
+This is the final execution phase where the balanced groups are created.
+	8.	Bin the KPI for Stratification: The app categorizes the primary KPI into bins (e.g., “Converters” vs. “Non-Converters” or quantiles for a continuous KPI) to prepare it for stratification.
+	9.	Multi-Variable Stratified Randomization: The app splits the representative cohort into treatment and control groups, stratifying simultaneously on all key variables identified:
+	•	The binned KPI (from Step 8).
+	•	The population characteristics (from Step 6).
+	•	Any other important confounders identified by the user in Phase 1.
+	10.	Final Balance Verification: The app generates a conclusive “Balance Check” report. This quality gate uses statistical tests (t-tests, chi-squared tests) to prove that there are no significant pre-existing differences between the final groups, showing high p-values (>0.05) for all comparisons.
+Summary of the Final, Corrected Solution
+This refined structure places baseline analysis in its proper place at the beginning of the workflow, ensuring the entire experiment design is data-driven.
+
+User Requirement - Solution Implemented in the App
+Understand my data before starting - Phase 1: Baseline Analysis: Explore data with stats and visualizations; calculate baseline KPI metrics.
+Know how many users I need for my test - Phase 2: Power Analysis: Calculate required sample size using metrics from the baseline analysis and user-inputted MDE, alpha, and power.
+Know how long my test should run - Phase 2: Duration Estimation: Calculate required days based on the sample size and average daily traffic.
+Make my pilot results generalizable - Phase 3: Representative Sampling: Create a cohort that mirrors the target population using proportional stratified sampling.
+Create treatment/control groups - Phase 4: Group Generation: Use randomization to split the representative cohort.
+Ensure groups are not statistically different - Phase 4: Multi-Variable Stratification: Stratify on the KPI and other key variables to ensure balance.
+Prove that the groups are balanced - Phase 4: Balance Verification: Generate a final report with statistical tests and p-values to confirm group comparability.
