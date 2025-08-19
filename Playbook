@@ -1,0 +1,82 @@
+Advanced Experimentation Playbook – Production Blueprint
+Front Matter (1 page)
+	•	Title, subtitle, authorship, revision date.
+	•	Executive abstract (≤300 words).
+Chapter 1 – Foundations of Experimentation (7 pages)
+Learning goals
+	•	Recap Neyman–Rubin causal model; relate to counterfactual reasoning.
+	•	Distinguish hypothesis testing vs. estimation; one-tailed vs. two-tailed.
+	•	Enumerate biases: selection, survivorship, interference, novelty, instrumentation, Simpson’s paradox.
+Page layout
+	1.	Intro narrative tying causal inference to business value (0.5 page).
+	2.	Diagram: Potential-outcomes framework with treatment/control timelines (0.5 page).
+	3.	Formula deck (boxed):
+	•	Average Treatment Effect 
+	•	Variance of difference-in-means under SRS.
+	4.	Table: “Bias → Symptom → Mitigation,” 8 rows.
+	5.	Worked mini-example: checkout-flow change, show bias corrections (2 pages).
+	6.	Checklist sidebar: pre-experiment questions (1 page).
+	7.	Summary bullets & further reading (0.5 page).
+Chapter 2 – Parametric vs. Non-Parametric Tests (6 pages)
+	•	Decision flowchart (include Shapiro–Wilk normality test branch).
+	•	Test selection matrix (metrics × distribution assumptions).
+	•	Two worked examples:
+	1.	Binary metric → two-proportion z-test vs. Fisher exact.
+	2.	Highly skewed revenue per user → Mann-Whitney U vs. Welch’s t.
+	•	Include Python snippets validating assumptions via  scipy.stats .
+	•	Box: When CLT rescues the t-test at large n.
+Chapter 3 – Metric & Data-Type Driven Test Selection (5 pages)
+	•	KPI taxonomy: primary, secondary, guardrail.
+	•	Telecom use case: net-adds conversion vs. average handle time guardrail.
+	•	Table 1: Metric classes → Suggested test, MDE calc formula, minimum sample.
+	•	Table 2: Guardrail thresholds and stop-loss rules.
+	•	Include illustration of metric hierarchy tree.
+Chapter 4 – Sampling & Representation (6 pages)
+	•	Randomization methods: simple, blocked, stratified, geo-split.
+	•	Frequentist sample-size derivation with effect-size charts.
+	•	Bayesian power calculation using beta-binomial.
+	•	Case study: Verizon prepaid upsell where strata = retail region.
+	•	Diagram: skewed population → stratified allocation algorithm (pseudo-code).
+Chapter 5 – Matched Control Group Creation (4 pages)
+	•	Propensity score matching pipeline diagram.
+	•	Synthetic control (SC) algorithm primer; matrix-completion variant.
+	•	Example: Assisted-channel pilot with only 20 stores; SC vs. diff-in-diff table.
+	•	Warning box: Over-fitting in high-dimensional PS models.
+Chapter 6 – Bayesian Approaches & Sequential Testing (6 pages)
+	•	Beta-Bernoulli, Normal-Normal conjugacy cheat-sheet.
+	•	Posterior vs. likelihood heatmaps (insert matplotlib images).
+	•	Spending-function based alpha-adjustment vs. Bayesian stopping.
+	•	Dynamic decision boundaries: predictive probability of success (PPCS) curve.
+	•	Simulation study: sequential vs. fixed-horizon power using Python-based  ArviZ .
+Chapter 7 – Experimentation in Real-World Business Contexts (5 pages)
+Three mini-cases (1.5 pages each + reflective questions):
+	1.	Verizon B360 Gridwall A/B test – 2× uplift in feature-adoption.
+	2.	VZEngage notification cadence experiment – 16% churn-reduction.
+	3.	Assisted sales funnel pilot – matched-pair stores, Poisson time-to-sale. Insert table: context, design, metrics, results, key learnings.
+Chapter 8 – Optimization Beyond A/B Testing (4 pages)
+	•	Multi-armed bandit math: Thompson sampling derivation box.
+	•	Contextual bandits for push notification timing.
+	•	Uplift modeling: treatment propensity × heterogenous treatment effects.
+	•	Flowchart: choose A/B vs. MAB vs. uplift.
+Chapter 9 – Experimentation Governance & Culture (4 pages)
+	•	Org archetypes: centralized COE vs. embedded pods.
+	•	Policy templates: experiment charter, pre-registration doc.
+	•	Dashboard wireframe showcasing guardrails, decision log.
+	•	Anti-pattern callouts: p-hacking bingo card graphic.
+Appendices (6 pages)
+A. Experimentation checklist (1 page).
+B. Statistical formula reference sheet (2 pages).
+C. Sample experiment design templates – telecom, e-commerce, CX (3 pages, include markdown front-matter so they double as YAML for your internal tooling).
+Aggregate Pagination
+Front matter 1
+Ch 1 7
+Ch 2 6
+Ch 3 5
+Ch 4 6
+Ch 5 4
+Ch 6 6
+Ch 7 5
+Ch 8 4
+Ch 9 4
+Appendices 6
+Total = 54 pages (intentionally ≥50 to absorb figures).
