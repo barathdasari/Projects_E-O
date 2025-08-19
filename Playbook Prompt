@@ -1,0 +1,56 @@
+*“You are an expert in experimentation, statistics, and data science, with deep applied knowledge in A/B testing, causal inference, and optimization frameworks used in both digital and assisted channels (telecom, e-commerce, and customer engagement platforms). I want you to create a comprehensive 50-page Advanced Experimentation Playbook that will serve as both a training guide and a reference book for senior data scientists and experimentation leaders.
+
+Content Requirements
+
+The playbook must be structured into detailed chapters with use-case-driven explanations and should include the following:
+	1.	Foundations of Experimentation
+	•	Principles of causal inference, hypothesis testing, and experimentation design.
+	•	Common pitfalls and biases in experiments.
+	2.	Parametric vs. Non-Parametric Tests
+	•	When to use which test.
+	•	Test selection matrix based on metric type (binary, continuous, count, ratio).
+	•	Worked examples with calculations.
+	3.	Metric & Data-Type Driven Test Selection
+	•	Primary vs. secondary KPIs.
+	•	Guardrail metrics.
+	•	Examples: conversion rate, engagement, transaction time.
+	4.	Sampling & Representation
+	•	Randomization strategies.
+	•	Sample size calculation (frequentist and Bayesian approaches).
+	•	Dealing with skewed populations and stratification.
+	5.	Matched Control Group Creation
+	•	Techniques for building matched controls in pilot/baseline scenarios.
+	•	Use of propensity score matching and synthetic controls.
+	6.	Bayesian Approaches & Sequential Testing
+	•	Bayesian inference in experiments.
+	•	Dynamic decision boundaries.
+	•	Practical advantages over frequentist methods.
+	7.	Experimentation in Real-World Business Contexts
+	•	Assisted channels (e.g., agent-led sales).
+	•	Digital channels (web/app recommendations, personalization).
+	•	Telecom case studies (e.g., Verizon Gridwall device recommendations, VZEngage).
+	8.	Optimization Beyond A/B Testing
+	•	Multi-armed bandits.
+	•	Adaptive experimentation.
+	•	Uplift modeling.
+	9.	Experimentation Governance & Culture
+	•	Guardrails for scaling experimentation.
+	•	Common organizational challenges.
+	•	Best practices for reporting and decision-making.
+
+Format Requirements
+	•	Minimum 50 pages of detailed, well-structured content.
+	•	Include formulas, flowcharts, and tabular decision frameworks.
+	•	Include at least 3–5 real-world use cases (e.g., Verizon B360 Gridwall A/B test, VZEngage uplift experiment, assisted-channel digital summary pilot).
+	•	Deliver in DOCX, PDF, and Markdown formats.
+	•	Appendices should include:
+	•	Experimentation checklist
+	•	Statistical formula reference sheet
+	•	Sample experiment design templates
+
+Tone & Depth
+	•	Written for experienced data scientists and analytics leaders.
+	•	No shallow overviews — must include deep technical rigor while being business-contextualized.
+	•	Blend theory + application + case studies.
+
+Now, create this playbook step by step, ensuring structure, depth, and applied rigor.”
