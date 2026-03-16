@@ -1,0 +1,140 @@
+Based on the "Base Marketing Hold Out Groups" document, the Verizon Base Management (BMMC) team utilizes a structured system of control groups to measure marketing effectiveness and incrementality.
+A Hold Out Group (HOG) is defined as a control group of customers who are suppressed from receiving specific marketing treatments to help measure the true impact of campaigns.
+Here is a breakdown of the specific hold-out logic and methodologies used:
+
+1. Types of Hold Out Groups
+The strategy employs several distinct HOGs, most of which are mutually exclusive, meaning a customer is typically assigned to only one
+Group Name - Allocation -Description & Purpose
+PHOG (Perpetual Holdout Group) - 4% of base - Measures the overall performance of the BMMC marketing strategy by suppressing all BMMC offers.
+CARHOG - 6% for each CAR Measures performance for individual Customer Action Routes (CARs) like Upgrades, Pricing, FWA, or Credit Cards . Customers are only suppressed from their specific CAR group.
+NBx HOG - 6% of base - Measures the benefit of the AI-driven NBx personalization experience. Unlike others, this is an overlapping HOG.
+DHOG - Excluded from base - Negative or low-margin suppression. It targets customers in zip codes that are not profitable. They only receive legal notifications.
+Strategic Control - Ad hoc - Used for specific tests or "quick wins" on individual message codes to measure the impact of a specific offer.
+
+
+2. Refresh Methodology
+The team maintains a "Treatable Universe" through a rotating refresh schedule to ensure the groups remain representative over time.
+Duration: Customers typically remain in their assigned group for one year.
+Rotation: 25% of held-out lines are refreshed each quarter.
+New Accounts: There is a daily injection of 2% new account adds, prioritizing the Onboarding phase.
+Scoring: All customers are scored simultaneously to maintain consistency
+
+3. Technical Implementation
+The hold-out data is managed through specific GCP (Google Cloud Platform) Datasets:
+Mobile Base: Managed in the udm_prdusr_allvm.crm_cust_acct_ohog_v table.
+Prospects: Managed in the hqmkt_prd_qmtbls_v.crm_prospect_hog table.
+
+Applying this hold-out logic to a base of 72 million smartphone lines provides a massive data set for statistical significance, but it also introduces significant opportunity cost and potential attribution blind spots.
+While the current framework is structurally sound for a large enterprise, there are several opportunities to make the logic more rigorous and financially precise.
+1. The Scale & Opportunity Cost Analysis
+At 72 million lines, the current percentages translate to the following:
+PHOG (4%): ~2.88 million lines receiving zero marketing.
+CARHOGs (6% each): ~4.32 million lines per "Customer Action Route" (Upgrade, FWA, etc.) that are suppressed from specific high-value offers.
+NBx HOG (6%): ~4.32 million lines receiving random or "business as usual" offers instead of AI-optimized ones.
+The Opportunity for Rigor: A 4% PHOG (2.88M lines) is likely over-powered. In statistics, once your sample size reaches a certain threshold, the "Standard Error" diminishes. You can likely achieve 95% confidence levels with a much smaller PHOG (e.g., 0.5% to 1% of the base, or ~360k–720k lines).
+Precision Action: Perform a Power Analysis to determine the minimum sample size needed to detect a statistically significant lift. Reducing the PHOG from 4% to 1% could "release" over 2 million customers back into the treatable universe, potentially driving millions in incremental revenue.
+
+2. Moving from "Mutually Exclusive" to "Factorial Design"
+The document states that HOGs are mutually exclusive. This means a customer in the Upgrade CARHOG is never in the FWA CARHOG.
+The Opportunity for Rigor: Mutually exclusive groups prevent you from measuring interaction effects (e.g., does sending an FWA offer cannibalize a customer’s likelihood to Upgrade?).
+Precision Action: Transition to a Fractional Factorial Design. This would allow a small percentage of customers to be held out from combinations of treatments. This reveals if "over-communication" (sending 3 different CAR offers) leads to lower conversion than sending just one.
+
+
+3. Stratification vs. Random Assignment
+The current logic implies a random 4% or 6% draw. However, a "random" 4% of 72 million might accidentally over-index on low-value prepaid lines or under-index on high-value "Unlimited Ultimate" plans.
+The Opportunity for Rigor: * Precision Action: Implement Stratified Sampling. Ensure each hold-out group perfectly mirrors the total base in terms of: * ARPU (Average Revenue Per User) * Tenure * Churn Propensity Score * Device Type (iPhone vs. Android) Without stratification, a "lift" in the treatment group might actually just be a result of the control group having more "at-risk" customers by random chance.
+
+
+4. Refining the "DHOG" (Negative Margin) Logic
+The current logic uses Zip Codes to identify unprofitable customers for the DHOG.
+The Opportunity for Rigor: Zip codes are a "blunt instrument." A zip code might be unprofitable on average due to tower maintenance costs, but it may still contain high-value "Pro" users or multi-line families who are highly profitable.
+Precision Action: Shift from Geographic Suppression (Zip Code) to Individual Contribution Margin Suppression. Use the GCP dataset to calculate the specific margin of every line. If a line has a negative margin, they enter DHOG; if they have a positive margin (even in a "bad" zip code), they should remain treatable.
+
+
+5. Managing "Hold-out Fatigue" (The 1-Year Rule)
+The document specifies that customers remain in a hold-out group for one year.
+The Opportunity for Rigor: For a 72M base, a year is a long time to ignore a customer. In the wireless industry, the "Selection Bias" grows over time—customers who don't receive offers for 12 months are more likely to churn to a competitor who is marketing to them.
+Precision Action: Implement Synthetic Control Groups or shorter "cool-down" periods. Instead of a hard 1-year lock, use "Rolling Hold-outs" where the 25% refresh happens more frequently (e.g., monthly) to ensure no single customer is left "dark" for a full 365 days, which mitigates long-term churn risk.
+
+
+Feature - Current Logic - Proposed Rigorous Logic
+PHOG Size - 4% (Static) - Power-analyzed (Dynamic/Smaller)
+Logic Type - Mutually Exclusive - Factorial (to measure interactions)
+Sampling - Random - Stratified (by ARPU/Churn risk)
+Suppression - Zip Code (DHOG) - Individual Margin / LTV
+Duration - 1 Year - Rolling / Periodic Refresh
+
+
+Here is the step-by-step framework to test the data for stratification requirements.
+1. Conduct a "Balance Test" (Standardized Mean Difference)
+The first step is to pull a random 4% sample from your crm_cust_acct_ohog_v table and compare it to the 96% treatment group across your Key Performance Indicators (KPIs) before any marketing is sent.
+The Metric: Calculate the Standardized Mean Difference (SMD) for ARPU, Tenure, and Data Usage.
+The Threshold: If the SMD is > 0.1, your groups are imbalanced. A random draw is not enough, and stratification is required.
+Why it matters: In a 72M base, if your 4% control group accidentally has 1% more "High Churn Risk" customers than the treatment group, your marketing will look like it's performing miracles, when in reality, the control group was just "designed to fail" by random chance.
+
+2. Variance Analysis by Segment
+Stratification is required if your population is Heterogeneous (meaning different groups behave very differently). You should test for variance across these three buckets:
+Value Tier: Compare the variance of ARPU in "Premium" plans vs. "Entry" plans. If the variance is significantly higher in one, that group must be its own stratum.
+Tenure: New customers (0-6 months) have wildly different churn behaviors than 10-year veterans.
+Device Lifecycle: Customers with a 3-year-old iPhone are "primed" to upgrade. If these are not evenly split between HOG and Treatment, your Upgrade CARHOG results will be invalid.
+3. The "A/A Test" Simulation
+Before committing to the hold-out logic for the next quarter, run a Simulated A/A Test using historical data:
+Take last month’s data where no marketing was applied to anyone (or where everyone was treated the same).
+Randomly assign them into your proposed 4% PHOG and 96% Treatment groups.
+Calculate the "Lift."
+The Result: Since no different treatment was applied, the Lift should be zero. If your simulation shows a "statistically significant" lift of 0.5% or 1%, it proves that random assignment is failing and you are seeing "noise" caused by a lack of stratification.
+4. Technical Implementation in GCP
+To prove stratification is needed to your stakeholders, run this logic in your GCP environment:
+Segment the Base: Create 5-10 "cells" based on a combination of Tenure x Plan Type x Churn Score.
+Check Sample Proportions: Calculate the percentage of the total base each cell represents.
+The Test: Pull your 4% PHOG. If "Cell A" (e.g., High-Value/High-Churn) makes up 5% of the total base but only 3.8% of your PHOG, you have under-sampling bias.
+Summary: When to mandate stratification
+You should move from random hold-outs to stratified hold-outs if:
+SMD > 0.1 on any major financial KPI.
+A/A Tests show a "phantom lift" of >0.25%.
+High-Value Outliers: If <1% of your customers drive >10% of your revenue, a random 4% draw is too risky; you must stratify to ensure those "whales" are perfectly split.
+
+
+
+
+Mapping Results from offer level to Customer level
+To map offer-level performance to a customer level when a customer qualifies for multiple prioritized offers, you must use Counterfactual Mapping (often called "Ghost Offering").
+In a complex environment like Verizon's—where a customer might qualify for an Upgrade, a Netflix bundle (Product), and a 5G Home (FWA) offer simultaneously—you cannot simply look at who bought what. You must know what the Hold Out Group (HOG) would have been offered if they weren't being held out.
+Here is the logic for mapping this at a customer level:
+1. The "Ghost Offer" Logic (Counterfactual Assignment)
+For measurement to be rigorous, every customer in your 4% PHOG or 6% CARHOG must be assigned a "Ghost Offer" in your data environment.
+The Process: You run your NBx (Next Best Action) model and business priority rules against 100% of the base (Treatment + Hold Outs).
+The Result: Every customer gets a "Rank 1 Offer" tag in the GCP dataset, regardless of whether they actually see it.
+Treatment Customer: Sees the Rank 1 Offer.
+HOG Customer: Sees nothing, but the data reflects: "If this customer were treated, they would have seen the Upgrade offer."
+2. Measuring the "Next Best Action" Shift
+The CARHOG logic (6% per route) is specifically designed to measure what happens when a specific "Category" is removed from the priority list. This is how you map the interaction:
+Case A (The Displacement Effect): A customer qualifies for Upgrade (Priority 1) and FWA (Priority 2).
+In Treatment: They receive the Upgrade offer.
+In Upgrade CARHOG: The system "skips" the Upgrade offer and presents the FWA offer.
+In PHOG: They receive nothing.
+The Mapping: You compare the customer-level conversion of the Upgrade CARHOG group against the Treatment group. If the CARHOG group has a higher FWA take-rate, you have quantified the "Cannibalization/Displacement Rate"—proving that sending an Upgrade offer actually "steals" focus from FWA.
+
+3. The Mapping Hierarchy for your KPI Trend
+To map this to a dashboard or trend line, you should structure your data at the Customer-Offer Grain:
+
+Customer ID-Eligibility Segment-Top Priority (Ghost)-Actual Group-Treatment Received-Conversion Recorded
+001-High Value-Upgrade-Treatment-Upgrade-Yes (Upgrade)
+002-High Value-Upgrade-Upgrade CARHOG-FWA (Next Best)-Yes (FWA)
+003-High Value-Upgrade-PHOG-None-No
+
+How to interpret this for the KPI:
+Offer Lift: Compare conversion of "Top Priority: Upgrade" customers in Treatment vs. "Top Priority: Upgrade" in PHOG.
+Cross-Sell Lift: Compare FWA conversion for customers whose Top Priority was Upgrade but were held out from it (CARHOG).
+
+4. Precision Challenges at 72M Scale
+When mapping at this level, two "rigor" traps can ruin your results:
+Eligibility Drift: Qualification criteria (like credit scores or contract end-dates) change daily. You must map the "Ghost Offer" at the exact moment of the marketing trigger, not at the end of the month. If you score everyone on the 1st, but a customer becomes "Upgrade Eligible" on the 15th, your control group mapping will be "stale."
+The "NBx Noise" (The 6% NBx HOG): Since the NBx HOG is overlapping, you must ensure that when measuring an Offer (like FWA), you exclude the NBx HOG lines if you are testing the Offer's value, or include them if you are testing the AI's priority value.
+Summary Recommendation:
+To map this accurately, your SQL logic in the udm_prdusr_allvm.crm_cust_acct_ohog_v table should join the Hold Out Tag with the Scoring Output Tag.
+Measurement Rule: Never compare "Everyone who saw an Upgrade offer" to "Everyone in the PHOG." Instead, compare "Everyone who saw an Upgrade offer" to "Everyone in the PHOG whose 'Rank 1 Ghost Offer' was Upgrade." This is the only way to ensure you are comparing "apples to apples" at a customer level.
+Does your current reporting team use these "Ghost Offer" tags, or are they comparing the Hold Out Group as a single aggregate block?
+
+
+
